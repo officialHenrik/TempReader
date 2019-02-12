@@ -8,6 +8,8 @@ import time
 # Code borrowed from http://www.circuitbasics.com/raspberry-pi-ds18b20-temperature-sensor-tutorial/
 class TempReader:
     def __init__(self):
+
+      # Enable kernel modules
       os.system('modprobe w1-gpio')
       os.system('modprobe w1-therm')
       
@@ -27,7 +29,7 @@ class TempReader:
     def read_temp(self):
         lines = read_temp_raw()
         
-        # Wait for reading
+        # Wait for temperature reading
         while lines[0].strip()[-3:] != 'YES':
             time.sleep(0.2)
             lines = read_temp_raw()
@@ -35,12 +37,12 @@ class TempReader:
         # Find temperature position
         equals_pos = lines[1].find('t=')
         
-        temp_c = 126000 # default return max temp + 1deg celcius
+        temp_degC = 126000 # default return max temp + 1deg celcius
         # If temperature reading found. Pick it and convert to celcius
         if equals_pos != -1:
-            temp_string = lines[1][equals_pos+2:]
-            temp_c = float(temp_string) / 1000.0
+            temp_str = lines[1][equals_pos+2:]
+            temp_degC = float(temp_str) / 1000.0
         
         # Return temperature in celcius
-        return temp_c
+        return temp_degC
 	
