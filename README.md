@@ -3,15 +3,16 @@ reads temperature from a DS18B20 temperature sensor
 
 ## Enable the onw wire interface
 
-1. Add to boot
+1. Open boot config
 
         sudo nano /boot/config.txt, 
-    add:
+2. Add to bottom
+
         dtoverlay=w1–gpio
 
-2. sudo reboot
+3. Reboot the pi
 
-3. Enable kernel modules
+4. Enable kernel modules
 
         sudo modprobe w1–gpio
         sudo modprobe w1-therm
