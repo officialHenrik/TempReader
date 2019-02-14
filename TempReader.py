@@ -37,7 +37,7 @@ class TempReader:
         # Find temperature position
         equals_pos = lines[1].find('t=')
 
-        temp_degC = 126000 # default return max temp + 1deg celcius
+        temp_degC = 126 # default return max temp + 1deg celcius
         # If temperature reading found. Pick it and convert to celcius
         if equals_pos != -1:
             temp_str = lines[1][equals_pos+2:]
