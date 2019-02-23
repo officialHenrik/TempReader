@@ -16,3 +16,9 @@ reads temperature from a DS18B20 temperature sensor
 
         sudo modprobe w1-gpio
         sudo modprobe w1-therm
+
+5. Test
+
+        cd /sys/bus/w1/devices
+        cd 28-xxxx
+        cat w1_slave
