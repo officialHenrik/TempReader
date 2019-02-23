@@ -14,5 +14,5 @@ reads temperature from a DS18B20 temperature sensor
 
 4. Enable kernel modules
 
-        sudo modprobe w1–gpio
+        sudo modprobe w1-gpio
         sudo modprobe w1-therm
