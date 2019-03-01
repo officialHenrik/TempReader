@@ -1,7 +1,7 @@
 # TempReader
 reads temperature from a DS18B20 temperature sensor
 
-## Enable the onw wire interface
+## Enable the one wire interface
 
 1. Open boot config
 
