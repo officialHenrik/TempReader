@@ -5,7 +5,7 @@ reads temperature from a DS18B20 temperature sensor
 
 1. Open boot config
 
-        sudo nano /boot/config.txt, 
+        sudo nano /boot/config.txt
 2. Add to bottom
 
         dtoverlay=w1–gpio
